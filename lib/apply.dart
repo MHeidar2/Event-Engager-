@@ -12,9 +12,7 @@ class _ApplyPageState extends State<ApplyPage> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Apply'),
-        /*bottom: new TabBar(
-          tabs: <Widget>[new Text("All"), new Text("For You")],
-        ),*/
+        
       ),
       body: Center(),
     );
