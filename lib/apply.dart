@@ -9,7 +9,9 @@ class ApplyPage extends StatefulWidget {
 class _ApplyPageState extends State<ApplyPage> {
   @override
   Widget build(BuildContext context) {
-      appBar: new AppBar(
+    return new Scaffold(
+
+       appBar: new AppBar(
         title: new Text('Apply'),
         
       ),
