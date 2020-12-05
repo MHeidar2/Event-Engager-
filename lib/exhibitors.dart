@@ -15,9 +15,10 @@ class _ExhibitorPageState extends State<ExhibitorPage> {
         Navigator.pushReplacementNamed(context, '/');
       } else if (index == 2) {
         Navigator.pushReplacementNamed(context, '/vacancies');
-      } else if (index == 3) {
-        Navigator.pushNamed(context, '/menu');
       }
+      /*else if (index == 3) {
+        Navigator.pushNamed(context, '/menu');
+      }*/
     });
   }
 

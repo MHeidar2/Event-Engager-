@@ -14,9 +14,10 @@ class _VacanciesPageState extends State<VacanciesPage> {
         Navigator.pushReplacementNamed(context, '/');
       } else if (index == 1) {
         Navigator.pushReplacementNamed(context, '/exhibitors');
-      } else if (index == 3) {
-        Navigator.pushNamed(context, '/menu');
       }
+      /*else if (index == 3) {
+        Navigator.pushNamed(context, '/menu');
+      }*/
     });
   }
 

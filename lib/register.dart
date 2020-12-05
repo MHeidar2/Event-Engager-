@@ -94,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             // If the form is valid, display a Snackbar.
                             /*Scaffold.of(context).showSnackBar(
                         SnackBar(content: Text('Processing Data')));*/
-                            Navigator.pushNamed(context, '/');
+                            Navigator.pushReplacementNamed(context, '/welcome');
                           }
                         },
                         child: Text('Register',
@@ -133,13 +133,13 @@ class _RegisterPageState extends State<RegisterPage> {
             SignInButton(
               Buttons.Google,
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/');
               },
             ),
             SignInButton(
               Buttons.LinkedIn,
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/exhibitorshome');
               },
             ),
           ],

@@ -22,13 +22,13 @@ class _LoginPageState extends State<LoginPage> {
             SignInButton(
               Buttons.Google,
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/');
               },
             ),
             SignInButton(
               Buttons.LinkedIn,
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/exhibitorshome');
               },
             ),
             SizedBox(
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
               color: Colors.red,
               child: Text('Login', style: TextStyle(color: Colors.white)),
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/');
               },
             )
           ])),

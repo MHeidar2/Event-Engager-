@@ -7,6 +7,10 @@ import 'about.dart';
 import 'welcome.dart';
 import 'login.dart';
 import 'register.dart';
+import 'exhibitorhome.dart';
+import 'myvacancies.dart';
+import 'applicants.dart';
+import 'add_vacancy.dart';
 
 void main() {
   runApp(new MyApp());
@@ -32,11 +36,14 @@ class MyApp extends StatelessWidget {
           '/menu': (context) => MenuPage(),
           '/apply': (context) => ApplyPage(),
           '/edit_profile': (context) => MyHomePage(),
-          '/register': (context) => ExhibitorPage(),
           '/login': (context) => LoginPage(),
           '/about': (context) => AboutPage(),
           '/welcome': (context) => WelcomePage(),
-          '/register': (context) => RegisterPage()
+          '/register': (context) => RegisterPage(),
+          '/exhibitorhome': (context) => ExhibitorHomePage(),
+          '/myvacancies': (context) => MyVacanciesPage(),
+          '/applicants': (context) => ApplicantsPage(),
+          '/add_vacancy': (context) => AddVacancyPage(),
         });
   }
 }
@@ -55,9 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.pushReplacementNamed(context, '/exhibitors');
       } else if (index == 2) {
         Navigator.pushReplacementNamed(context, '/vacancies');
-      } else if (index == 3) {
-        Navigator.pushNamed(context, '/menu');
       }
+      /*else if (index == 3) {
+        Navigator.pushNamed(context, '/menu');
+      }*/
     });
   }
 
