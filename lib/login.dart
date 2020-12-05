@@ -31,9 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.pushNamed(context, '/');
               },
             ),
-            SizedBox(
-              height: 80,
-            ),
+           
             Row(children: <Widget>[
               Expanded(
                 child: new Container(
