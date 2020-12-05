@@ -10,7 +10,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  Widget _submitButton() {
+  /*Widget _submitButton() {
     return Container(
       /*onTap: () {
         Navigator.push(
@@ -50,45 +50,55 @@ class _WelcomePageState extends State<WelcomePage> {
         style: TextStyle(fontSize: 20, color: Colors.white),
       ),
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image(
-            image: AssetImage('images/logo.png'),
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image(
+                image: AssetImage('images/logo.png'),
+              ),
+              SizedBox(
+                height: 80,
+              ),
+              ButtonTheme(
+                minWidth: 250.0,
+                height: 50.0,
+                child: OutlineButton(
+                  disabledBorderColor: Colors.red,
+                  child: Text('Login',
+                      style: TextStyle(color: Colors.red, fontSize: 18.0)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ButtonTheme(
+                minWidth: 250.0,
+                height: 50.0,
+                child: RaisedButton(
+                  color: Colors.red,
+                  child: Text('Register',
+                      style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/register');
+                  },
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
           ),
-          SizedBox(
-            height: 80,
-          ),
-          OutlineButton(
-            disabledBorderColor: Colors.red,
-            child: Text('Login', style: TextStyle(color: Colors.red)),
-            onPressed: () {
-              Navigator.pushNamed(context, '/login');
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          RaisedButton(
-            color: Colors.red,
-            child: Text('SIGNUP', style: TextStyle(color: Colors.white)),
-            onPressed: () {
-              Navigator.pushNamed(context, '/login');
-            },
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 /*Widget _submitButton() {

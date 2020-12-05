@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  LoginPage({Key key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.light(),
-      home: LoginPage(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  _LoginPageState createState() => new _LoginPageState();
 }
 
-class LoginPage extends StatelessWidget {
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

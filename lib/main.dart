@@ -6,6 +6,7 @@ import 'apply.dart';
 import 'about.dart';
 import 'welcome.dart';
 import 'login.dart';
+import 'register.dart';
 
 void main() {
   runApp(new MyApp());
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           '/login': (context) => LoginPage(),
           '/about': (context) => AboutPage(),
           '/welcome': (context) => WelcomePage(),
+          '/register': (context) => RegisterPage()
         });
   }
 }
@@ -67,6 +69,55 @@ class _MyHomePageState extends State<MyHomePage> {
         /*bottom: new TabBar(
           tabs: <Widget>[new Text("All"), new Text("For You")],
         ),*/
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+              height: 100.0,
+              child: DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                ),
+                child: Text(
+                  'Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: FlutterLogo(size: 56.0),
+                title: Text('Edit Profile'),
+                trailing: Icon(Icons.keyboard_arrow_right),
+                //onTap: () => ,
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("About"),
+                trailing: Icon(Icons.keyboard_arrow_right),
+                onTap: () {
+                  Navigator.pushNamed(context, '/about');
+                },
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.exit_to_app),
+                title: Text("Logout"),
+                onTap: () {
+                  Navigator.pushNamed(context, '/welcome');
+                },
+                //trailing: Icon(Icons.exit_to_app),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Stack(
         alignment: Alignment.center,
@@ -133,10 +184,10 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.content_paste),
             label: 'Vacancies',
           ),
-          BottomNavigationBarItem(
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.menu),
             label: 'Menu',
-          ),
+          ),*/
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.red,

@@ -86,6 +86,55 @@ class _VacanciesPageState extends State<VacanciesPage> {
               tabs: [Tab(text: "All"), Tab(text: "Applied")],
             ),
           ),
+          drawer: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                Container(
+                  height: 100.0,
+                  child: DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                    ),
+                    child: Text(
+                      'Menu',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    leading: FlutterLogo(size: 56.0),
+                    title: Text('Edit Profile'),
+                    trailing: Icon(Icons.keyboard_arrow_right),
+                    //onTap: () => ,
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    title: Text("About"),
+                    trailing: Icon(Icons.keyboard_arrow_right),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/about');
+                    },
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.exit_to_app),
+                    title: Text("Logout"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/welcome');
+                    },
+                    //trailing: Icon(Icons.exit_to_app),
+                  ),
+                ),
+              ],
+            ),
+          ),
           body: TabBarView(
             children: [
               viewVacancies(0),
@@ -106,10 +155,10 @@ class _VacanciesPageState extends State<VacanciesPage> {
                 icon: Icon(Icons.content_paste),
                 label: 'Vacancies',
               ),
-              BottomNavigationBarItem(
+              /*BottomNavigationBarItem(
                 icon: Icon(Icons.menu),
                 label: 'Menu',
-              ),
+              ),*/
             ],
             currentIndex: _selectedIndex,
             selectedItemColor: Colors.red,
