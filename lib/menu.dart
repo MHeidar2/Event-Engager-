@@ -35,6 +35,15 @@ class _MenuPageState extends State<MenuPage> {
               },
             ),
           ),
+           Card(
+            child: ListTile(
+              title: Text("Home"),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Navigator.pushNamed(context, '/Welcome');
+              },
+            ),
+          ),
           Card(
             child: ListTile(
               leading: Icon(Icons.exit_to_app),
