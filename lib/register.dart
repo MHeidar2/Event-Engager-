@@ -81,6 +81,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         return null;
                       },
                     ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Resetpassword',
+                      ),
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                        return null;
+                      },
+                    ),
                     SizedBox(
                       height: 5,
                     ),
