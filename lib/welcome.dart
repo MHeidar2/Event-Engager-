@@ -109,11 +109,7 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
-  Widget _label() {
-    return Container(
-        margin: EdgeInsets.only(top: 40, bottom: 20), child: Column());
-  }
-
+ 
   Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
