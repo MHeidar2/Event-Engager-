@@ -76,6 +76,7 @@ class AdminProvider with ChangeNotifier {
 
   Future<List<Applicant>> fetchApplicants() async {
     try {
+      allApplicants = [];
       String url = "https://miu-employment-fair-default-rtdb.firebaseio.com/";
       final response = await http.get(Uri.parse(url + "Applicants" + ".json"));
       final data = json.decode(response.body) as Map<String, dynamic>;
@@ -138,11 +139,7 @@ class AdminProvider with ChangeNotifier {
   }
 
   Future<void> addExhibitor(
-      String name, String website, String email, String id,
-      {String about = 'N/A',
-      String contactInfo = 'N/A',
-      String logoRef = 'N/A',
-      String address = 'N/A'}) async {
+      String name, String website, String email, String id) async {
     try {
       String url = "https://miu-employment-fair-default-rtdb.firebaseio.com/";
       var response = await http.put(
@@ -151,11 +148,14 @@ class AdminProvider with ChangeNotifier {
           'name': name,
           'website': website,
           'email': email,
+          'contactInfo': 'NA',
+          'logoRef': 'NA',
+          'address': 'NA',
+          'about': 'NA',
         }),
       );
       allExhibitors.add(Exhibitor(
           id: response.toString(), name: name, website: website, email: email));
-      notifyListeners();
       return 'true';
     } catch (e) {
       return e.toString();
