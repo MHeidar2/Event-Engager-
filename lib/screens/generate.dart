@@ -9,7 +9,7 @@ class GeneratePage extends StatefulWidget {
 }
 
 class GeneratePageState extends State<GeneratePage> {
-  String qrData = "https://github.com/yara22";
+  String qrData = "https://github.com/yaranegm22";
 
   @override
   Widget build(BuildContext context) {
